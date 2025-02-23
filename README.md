@@ -27,6 +27,12 @@ npm run build
 - **Persistent Storage**  Data remains after page refresh using LocalStorage.
 - **Reset System**  Clears all bookings and resets slots.
 
+What is Tested?
+- Booking a slot updates the available slots count.
+- Cancelling a booking frees up a slot.
+- Users are correctly moved from the waiting list when a slot becomes available.
+- Reset functionality clears all data and resets the slots.
+
 ##  Environment Variable Configuration
 Create a `.env` file in the root directory and add:
 ```sh
