@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useBooking } from "../hooks/useBooking";
 
 const BookingSystem: React.FC = () => {
+  // Custom hook to manage booking state
   const { slots, bookings, waitingList, bookSlot, cancelBooking, resetSystem } = useBooking();
   const [name, setName] = useState("");
 
@@ -25,15 +26,18 @@ const BookingSystem: React.FC = () => {
         Book Now
       </button>
 
+      {/* List of confirmed bookings */}
       <h3 className="text-lg font-semibold mt-5">Confirmed Bookings</h3>
       <ul>
         {bookings.map((b) => (
           <li key={b.id} className="flex justify-between bg-gray-100 p-2 my-2">
-            {b.name} <button className="text-red-500" onClick={() => cancelBooking(b.id)}>Cancel</button>
+            {b.name} 
+            <button className="text-red-500" onClick={() => cancelBooking(b.id)}>Cancel</button>
           </li>
         ))}
       </ul>
 
+      {/* Waiting list display */}
       <h3 className="text-lg font-semibold mt-5">Waiting List</h3>
       <ul>
         {waitingList.map((w, index) => (
@@ -41,6 +45,7 @@ const BookingSystem: React.FC = () => {
         ))}
       </ul>
 
+       {/* Reset system button  */}
       <button className="bg-red-500 text-white px-4 py-2 mt-5 w-full rounded" onClick={resetSystem}>
         Reset System
       </button>

@@ -37,6 +37,7 @@ export function useBooking() {
     }
   };
 
+  
   const cancelBooking = (id: string) => {
     const updatedBookings = bookings.filter((b) => b.id !== id);
     setBookings(updatedBookings);
